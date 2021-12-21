@@ -42,7 +42,7 @@
 
                         <a class="mx-3 cursor-pointer relative">
                             <i class="bi bi-cart text-gray-500 dark:text-gray-400 text-lg dark:hover:text-gray-200"></i>
-                            <span class=" absolute bottom-3 left-3 text-red-500">0</span>
+                            <span class=" absolute bottom-3 left-3 text-red-500">{{cart}}</span>
                         </a>
                        </router-link>
                         <router-link :to='{name: "profile"}'>
@@ -79,8 +79,17 @@
         </nav>
 </template>
 <script>
+import { mapGetters } from "vuex"
 export default {
     name: "Nav",
+    
+    computed:{
+        ...mapGetters({cart: 'totalCartItems'})
+        // cart(){
+        //     console.log(this.$store.state.carts.length)
+        //     return this.$store.state.carts.length
+        // }
+    }
 }
 </script>
 <style lang="">

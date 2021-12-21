@@ -1,8 +1,8 @@
 <template>
   <main>
-     <Nav/>
+     <Nav v-if="user!==null"/>
         <router-view/>
-      <Footer/>
+      <Footer v-if="user!==null"/>
   </main>
 </template>
 
@@ -12,9 +12,16 @@ import Footer from "./components/Footer.vue";
 
 export default{
   components:{
-    Nav,
-    Footer,
-}
+      Nav,
+      Footer,
+  },
+  computed:{
+     user(){
+       const user = JSON.parse(localStorage.getItem("USER"));
+        console.log(user);
+       return 
+     }
+  }
 }
 </script>
 

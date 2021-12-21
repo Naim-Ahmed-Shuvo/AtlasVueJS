@@ -8,9 +8,7 @@
             <p className="text-sm text-gray-400">{{description}} </p>
             <div className="card_social flex items-center justify-between mt-4">
                 <span className="text-gray-400 text-lg">${{price}}</span>
-                <i class="bi bi-cart-plus text-gray-400 text-xl mr-3 cursor-pointer"></i>
-
-              
+                <i class="bi bi-cart-plus text-gray-400 text-xl mr-3 cursor-pointer" @click="addToCart(id)"></i>
             </div>
         </div>
     </div>
@@ -23,7 +21,21 @@ export default {
             "price",
             "description",
             "id"
-        ]
+        ],
+
+    methods:{
+        addToCart(id){
+        //    console.log(id);
+        let  item = {
+                name: this.name,
+                image: this.image,
+                description: this.description,
+                price: this.price,
+                id: this.id
+            }
+           this.$store.commit('addToCart',item)
+        }
+    }    
 }
 </script>
 <style lang="">

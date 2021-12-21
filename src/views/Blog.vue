@@ -9,7 +9,11 @@
                  </div>
                  <div className="cards grid sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 gap-20">
 
-                       <div className="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700 cursor-pointer" >
+                        <div v-if="posts.length===0">
+                            Loading....
+                        </div>
+                       <router-link v-for="(post, index) in posts" :key="index" :to="{name: 'blogDetails',params:{id: post.id}}" v-else>
+                           <div className="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700 cursor-pointer" >
                                 
                                 <div className="card_text">
                                     <h4 className=" text-lg text-gray-800 font-medium my-3 dark:text-gray-100">Lorem ipsum dolor sit amet.</h4>
@@ -26,13 +30,30 @@
                                     </div>
                                 </div>
                             </div>
+                       </router-link>
                  </div>
             </div>
         </section>
 </template>
 <script>
 export default {
-    name: "Blog"
+    name: "Blog",
+    data(){
+        return {
+            posts:[]
+        }
+    },
+    methods:{
+       async getPosts(){
+          const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+          const posts = await res.json()
+          this.posts = posts
+          console.log(posts);
+       }
+    },
+    created(){
+      this.getPosts()
+    }
 }
 </script>
 <style>

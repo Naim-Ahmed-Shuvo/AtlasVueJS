@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <section className="featuredposts py-10 mt-36">
         <div className="container mx-auto xs:px-2">
             <div className="title my-5 flex justify-between">
@@ -12,7 +12,7 @@
                             :description='item.description'
                             :price='item.price'
                             :id="item.id"
-                            /> 
+                     /> 
             </div>
         </div>
     </section>
@@ -32,5 +32,5 @@ export default {
     },
 };
 </script>
-<style lang="">
+<style>
 </style>
