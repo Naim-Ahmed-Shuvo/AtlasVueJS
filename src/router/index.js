@@ -6,58 +6,104 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
-   
-    
+    component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
   },
   {
     path: '/login',
     name: 'login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-   
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue'),
     
   },
   {
     path: '/blog',
     name: 'blog',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue'),
+     
+    component: () => import(/* webpackChunkName: "Blog" */ '../views/Blog.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
     
   },
   {
     path: '/blog/:id',
     name: 'blogDetails',
     props:true,
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/BlogDetails.vue'),
+    component: () => import(/* webpackChunkName: "BlogDetails" */ '../views/BlogDetails.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
     
   },
   {
     path: '/shop',
     name: 'shop',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue'),
+    component: () => import(/* webpackChunkName: "Shop" */ '../views/Shop.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
     
   },
   {
     path:"/cart",
     name: "cart",
-    component: () => import(/* webpackChunkName: "about" */ '../views/Cart.vue'),
+    component: () => import(/* webpackChunkName: "Cart" */ '../views/Cart.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
    
   },
   {
     path:"/profile",
     name: "profile",
-    component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
+    component: () => import(/* webpackChunkName: "Profile" */ '../views/Profile.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
    
   },
 ]

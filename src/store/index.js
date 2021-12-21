@@ -2,16 +2,16 @@ import { createStore } from 'vuex'
 import router from '../router';
 export default createStore({
   state: {
-    user: "I am user",
-    isLoggedIn:false,
+    user: {},
+    loggedIn:false,
     carts:[]
   },
   mutations: {
      //for syncronous task
-     login: (state) => {
-        // console.log("login");
-        state.isLoggedIn = true;
-        router.push('/home');
+     signIn: (state,user) => {
+        console.log(user);
+        state.user = user;
+        router.push('/');
      },
      addToCart: (state,item) => {
       //  console.log(item);
@@ -45,6 +45,10 @@ export default createStore({
       return total;
       // state.carts?.map(item=>console.log(item))
       //  return 30;
+    },
+    getSignedUser: ()=> {
+      let user = localStorage.getItem("USER");
+      return user;
     }
   }
 })

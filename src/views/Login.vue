@@ -10,6 +10,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from '../firebase'
 
 
+
 //The vue instance
 export default {
     name:"Login",
@@ -19,13 +20,17 @@ export default {
             const auth = getAuth()
 
             signInWithPopup(auth,provider).then(res=>{
-                console.log(res)
+                // console.log(res)
                  localStorage.setItem("USER",JSON.stringify({
                         name: res.user.displayName,
                         email: res.user.email,
                         image: res.user.photoURL
                  }));
-
+                 this.$store.commit("signIn",{
+                        name: res.user.displayName,
+                        email: res.user.email,
+                        image: res.user.photoURL
+                 })
                  this.$router.push('/');
 
             }).catch(err=>{

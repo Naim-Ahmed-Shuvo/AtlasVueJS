@@ -1,8 +1,9 @@
 <template>
   <main>
-     <Nav v-if="user!==null"/>
+     <Nav v-if="$route.path!=='/login'"/>
         <router-view/>
-      <Footer v-if="user!==null"/>
+        
+      <Footer v-if="$route.path!=='/login'"/>
   </main>
 </template>
 
@@ -18,7 +19,7 @@ export default{
   computed:{
      user(){
        const user = JSON.parse(localStorage.getItem("USER"));
-        console.log(user);
+        // console.log(user);
        return 
      }
   }
