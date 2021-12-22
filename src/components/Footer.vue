@@ -8,7 +8,7 @@
                      <h4 class=" text-gray-800 dark:text-blue-100 font-bold">ATLAS</h4>
                 </div>
 
-                <button class="flex items-center p-2 border-slate-700 bg-white dark:bg-slate-700 rounded">
+                <button class="flex items-center p-2 border-slate-700 bg-white dark:bg-blue-500 rounded">
                     <span class="text-gray-700 dark:text-gray-100 text-sm mr-4">Contact Me</span>
                     <i class="bi bi-arrow-right text-gray-500 dark:text-gray-100 text-sm"></i>
  
@@ -34,7 +34,7 @@
 
                 <div class="footer_news_letter xs:flex xs:flex-col sm:flex-row justify-end xs:mt-5">
                     <div class="icon mr-10">
-                        <i class="bi bi-mailbox"></i>
+                        <i class="bi bi-mailbox dark:text-gray-100"></i>
 
                        
                     </div>

@@ -1,5 +1,5 @@
 <template lang="">
-    <div className="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700">
+    <div className="card p-2 bg-gray-50 dark:bg-gray-900 shadow border dark:border-gray-700">
         <div className="card_img">
             <img :src="image" alt="name" className="w-full rounded h-60"/>
         </div>

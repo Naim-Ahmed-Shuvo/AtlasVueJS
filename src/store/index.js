@@ -4,7 +4,9 @@ export default createStore({
   state: {
     user: {},
     loggedIn:false,
-    carts:[]
+    carts:[],
+    showModal: false,
+    theme:'light'
   },
   mutations: {
      //for syncronous task
@@ -28,6 +30,22 @@ export default createStore({
          alert("no item with this id")
        }
        state.carts = newcart;
+     },
+     closeModal: (state) => {
+        state.showModal = false
+     },
+     openModal: (state) => {
+        state.showModal = true
+     },
+     addDarkTheme: (state) => {
+       state.theme = 'dark';
+       console.log(state.theme);
+       document.querySelector("html").classList.add(state.theme)
+     },
+     addLightTheme: (state) => {
+      state.theme = 'light'
+      console.log(state.theme);
+      document.querySelector("html").classList.remove("dark")
      }
   },
   actions: {
@@ -49,6 +67,7 @@ export default createStore({
     getSignedUser: ()=> {
       let user = localStorage.getItem("USER");
       return user;
-    }
+    },
+    getCurrentTheme: (state) =>  state.theme
   }
 })

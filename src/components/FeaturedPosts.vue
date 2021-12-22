@@ -10,7 +10,7 @@
                  </div>
 
                  <div class="cards grid sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 gap-20" >
-                     <div class="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700" v-for="post in posts" :key="post.img">
+                     <div class="card p-2 bg-gray-50 dark:bg-gray-900 shadow border dark:border-gray-700 rounded" v-for="post in posts" :key="post.img">
                          <div class="card_img">
                              <img :src="post.img" class="w-full"  alt="img" />
                          </div>

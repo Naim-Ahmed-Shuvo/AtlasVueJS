@@ -26,8 +26,5 @@ export default {
     }
 }
 </script>
-<style scoped>
-    .hero{
-        background-image: url('../assets/hero.svg');
-    }
+<style scoped>    
 </style>

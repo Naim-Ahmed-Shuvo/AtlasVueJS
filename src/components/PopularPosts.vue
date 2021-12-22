@@ -4,11 +4,11 @@
                 <div class="title my-5 flex justify-between">
                      <h4 class="text-lg text-gray-800 font-medium dark:text-gray-100">Popular this week</h4>
                      <div class="flex items-center">
-                         <button>See All</button>
+                         <button class="dark:text-gray-100 font-poppins">See All</button>
                      </div>
                  </div>
                  <div class="cards grid sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 gap-20">
-                     <div class="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700" v-for="post in posts" :key="post.img">
+                     <div class="card p-2 bg-gray-50 dark:bg-gray-900 shadow border dark:border-gray-700" v-for="post in posts" :key="post.img">
                          <div class="card_img">
                              <img :src="post.img" alt="img" class="w-full rounded"/>
                          </div>

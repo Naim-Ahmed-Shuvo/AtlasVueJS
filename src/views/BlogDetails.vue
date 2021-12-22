@@ -5,7 +5,7 @@
                        <button className='flex justify-center items-center mx-auto py-3 px-3 bg-blue-500 text-slate-50 my-5 rounded'><i class="bi bi-arrow-left text-gray-100">{{id}}</i>
 </button>
                     </router-link>
-                    <div className="card p-2 bg-gray-50 dark:bg-slate-900 shadow border dark:border-slate-700" >
+                    <div className="card p-2 bg-gray-50 dark:bg-gray-900 shadow border dark:border-gray-700" >
 
                         <div className="card_text">
                             
@@ -24,13 +24,13 @@
                                 </div>
                             </div>
                             <div className='border p-5 mt-5 dark:border dark:border-slate-700'>
-                                <h3>POsted By</h3>
-                                <h4 className='text-sm font-medium'>Name: {{user.name}}</h4>
+                                <h3 class="dark:text-gray-100">POsted By</h3>
+                                <h4 className='text-sm font-medium dark:text-gray-100'>Name: {{user.name}}</h4>
                                 <span className='text-gray-800 dark:text-gray-200 text-sm block'>Email: {{user.email}}</span>
                                 <span className='text-gray-800 dark:text-gray-200 text-sm block'>Phone: {{user.phone}}</span>
                             </div>
                             <div className='border p-5 mt-5 dark:border dark:border-slate-700'>
-                                <h3>POsted comments</h3>
+                                <h3 class='dark:text-gray-300'>POsted comments</h3>
                                 <div v-for="(comment, index) in comments" :key="index" className='my-2 border border-slate-300 p-4 dark:border dark:border-slate-700'>
                                     <span className='text-gray-800 dark:text-gray-200 text-sm block'>Comment by: <b>{{comment.name}}</b></span>
                                     <p className='text-gray-800 dark:text-gray-200 text-sm block my-3'>

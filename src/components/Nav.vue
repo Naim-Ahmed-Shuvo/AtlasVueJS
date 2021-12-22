@@ -18,12 +18,12 @@
                             <span class="flex items-center mx-3">
                                 <!-- <Link href={'/blog'}>Blog</Link> -->
                                 <router-link :to="{name: 'blog'}">
-                                Blog
+                                   <span class="dark:text-gray-100">Blog</span>
                                 </router-link>
                             </span>
                             <span class="flex items-center mx-3">
                             <router-link :to="{name: 'shop'}">
-                                Shop
+                                <span class="dark:text-gray-100">Shop</span>
                                 </router-link>
                             </span>
                         </div>
@@ -34,7 +34,7 @@
                         <i class="bi bi-search text-gray-400 dark:text-gray-500"></i>
 
                         
-                        <input type="text" placeholder="Search..." class=" border-0 outline-none p-2 bg-transparent"/>
+                        <input type="text" placeholder="Search..." class=" border-0 outline-none p-2 bg-transparent dark:text-gray-100"/>
                     </div>
                     <div class="links flex items-center">
                        
@@ -56,22 +56,28 @@
                        
                         <a class="mx-3 cursor-pointer">
                             
-                            <i class="bi bi-moon-stars-fill text-gray-500 dark:text-gray-400 text-lg dark:hover:text-gray-200"></i>
+                            <i class="bi bi-moon-stars-fill text-yellow-500" v-if="theme=='light'" @click="addDarkTheme"></i>
+                            <i class="bi bi-brightness-high text-yellow-300 text-lg" v-else @click="addLightTheme"></i>
+
 
                         </a>
                     </div>
                 </div>
                 <div class=" cursor-pointer lg:hidden flex items-center">
+                    <router-link to="/cart">
+
                    <div class="relative cursor-pointer">
-                        <i class="bi bi-cart sm:text-lg"></i>
+                        <i class="bi bi-cart sm:text-lg dark:text-gray-200"></i>
                      
-                       <span class=" absolute bottom-1 left-3 text-red-500">0</span>
+                       <span class=" absolute bottom-1 left-3 text-red-500">{{cart}}</span>
                    </div>
+                    </router-link>
                     <a class="mx-3 cursor-pointer">
-                            <i class="bi bi-moon-stars-fill text-gray-500 dark:text-gray-400 text-lg dark:hover:text-gray-200"></i>
+                             <i class="bi bi-moon-stars-fill text-yellow-500" v-if="theme=='light'" @click="addDarkTheme"></i>
+                            <i class="bi bi-brightness-high text-yellow-300 text-lg" v-else @click="addLightTheme"></i>
                               
                         </a>
-                        <i class="bi bi-list sm:text-lg"></i>
+                        <i class="bi bi-list sm:text-xl cursor-pointer dark:text-gray-200" @click="openModal"></i>
 
                    
                 </div>
@@ -84,11 +90,23 @@ export default {
     name: "Nav",
     
     computed:{
-        ...mapGetters({cart: 'totalCartItems'})
+        ...mapGetters({cart: 'totalCartItems',theme: 'getCurrentTheme'})
         // cart(){
         //     console.log(this.$store.state.carts.length)
         //     return this.$store.state.carts.length
         // }
+    },
+    methods:{
+        openModal(){
+            this.$store.commit('openModal')
+        },
+        addDarkTheme(){
+            this.$store.commit('addDarkTheme')
+            // console.log(document.querySelector("html").classList.add("dark"))
+        },
+        addLightTheme(){
+            this.$store.commit('addLightTheme')
+        }
     }
 }
 </script>

@@ -5,7 +5,7 @@
                      <h4 class="text-lg text-gray-800 font-medium dark:text-gray-100">Recent posts</h4>
                  </div>
                  <div class="cards grid lg:grid-cols-2 xs:grid-cols-1 gap-10">
-                       <div class="card flex xs:flex-col sm:flex-row  border dark:border-slate-600 p-5" v-for="post in posts" :key="post.img">
+                       <div class="card flex xs:flex-col sm:flex-row  border dark:border-gray-700 p-5" v-for="post in posts" :key="post.img">
                              <div class="card-img  xs:flex  xs:justify-center">
                                 <img :src="post.img" alt="img"  class="w-full rounded"/>
                              </div>
