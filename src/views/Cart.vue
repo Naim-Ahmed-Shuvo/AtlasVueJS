@@ -41,12 +41,7 @@
                                    
                                     
                             </button>
-                           <!-- {
-                               cart.length !== 0&&
-                                    <Link href={'/checkout'} passHref>
-                                    <button class='bg-blue-500 px-3 py-2  text-slate-50 flex items-center mx-auto mt-10 rounded'> <span class='mr-3'>Check Out</span> <BsArrowRight/></button>
-                                    </Link>
-                           } -->
+                          
                     </div>
             </section>
 </template>

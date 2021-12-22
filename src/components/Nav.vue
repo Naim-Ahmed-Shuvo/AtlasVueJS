@@ -56,7 +56,7 @@
                        
                         <a class="mx-3 cursor-pointer">
                             
-                            <i class="bi bi-moon-stars-fill text-yellow-500" v-if="theme=='light'" @click="addDarkTheme"></i>
+                            <i class="bi bi-moon-stars-fill text-blue-500" v-if="theme=='light'" @click="addDarkTheme"></i>
                             <i class="bi bi-brightness-high text-yellow-300 text-lg" v-else @click="addLightTheme"></i>
 
 
@@ -73,7 +73,7 @@
                    </div>
                     </router-link>
                     <a class="mx-3 cursor-pointer">
-                             <i class="bi bi-moon-stars-fill text-yellow-500" v-if="theme=='light'" @click="addDarkTheme"></i>
+                             <i class="bi bi-moon-stars-fill text-blue-500" v-if="theme=='light'" @click="addDarkTheme"></i>
                             <i class="bi bi-brightness-high text-yellow-300 text-lg" v-else @click="addLightTheme"></i>
                               
                         </a>

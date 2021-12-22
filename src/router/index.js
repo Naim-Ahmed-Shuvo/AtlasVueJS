@@ -91,6 +91,37 @@ const routes = [
    
   },
   {
+    path:"/checkout",
+    name: "checkout",
+    component: () => import(/* webpackChunkName: "Checkout" */ '../views/Checkout.vue'),
+    beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
+   
+  },
+  {
+     path: "/payment",
+     name: "payment",
+     component: ()=>import (/* webPackChunkName: "Checkout" */'../views/Payment.vue'),
+     beforeEnter: (to, from, next) => {
+      let user = JSON.parse(store.getters.getSignedUser)
+      // console.log(user.name)
+      console.log(" in home",user)
+      if(user==null){
+        next('/login')
+      } else{
+        next()
+      }
+    } 
+  },
+  {
     path:"/profile",
     name: "profile",
     component: () => import(/* webpackChunkName: "Profile" */ '../views/Profile.vue'),

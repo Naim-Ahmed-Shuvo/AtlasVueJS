@@ -7,7 +7,7 @@
                  </div>
                  <div className="cards grid sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 gap-20">
 
-                        <div v-if="posts.length===0">
+                        <div v-if="posts.length===0" class="dark:text-gray-200">
                             Loading....
                         </div>
                        <router-link v-for="(post, index) in posts" :key="index" :to="{name: 'blogDetails',params:{id: post.id}}" v-else>
