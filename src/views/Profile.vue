@@ -11,6 +11,7 @@
             alt="img"
             className="rounded"
             style="height: 200px; width: 200px; margin: 0 auto"
+            v-if="getUser.image"
           />
         </div>
 
@@ -22,10 +23,10 @@
             {{ getUser.email }}
           </p>
           <button
-            className="bg-blue-500 text-white hover:shadow transition-all ease-in-out px-5 py-2 rounded mt-5"
+            className="bg-blue-500 text-white hover:shadow transition-all ease-in-out px-5 py-2 rounded mt-5 flex items-center justify-center mx-auto"
             @click="signOut"
           >
-            Sign Out
+            <span>Sign Out</span> <span class='loader ml-2' v-show="loading"></span>
           </button>
         </div>
       </div>
@@ -43,6 +44,11 @@ export { getAuth, signOut } from "firebase/auth";
 
 export default {
   name: "Profile",
+  data(){
+    return {
+      loading:false,
+    }
+  },
   created() {
     console.log("created");
   },
@@ -56,8 +62,12 @@ export default {
   },
   methods: {
     signOut() {
-      localStorage.clear();
-      this.$router.push("/login");
+      this.loading = true
+      setTimeout(() => {
+        localStorage.clear();
+        this.loading = false
+        this.$router.push("/login");
+      }, 1000);
     },
   },
   mounted() {
@@ -65,4 +75,25 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.loader {
+  
+  border-radius: 50%;
+  border-top: 1px solid rgb(250, 250, 250);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>

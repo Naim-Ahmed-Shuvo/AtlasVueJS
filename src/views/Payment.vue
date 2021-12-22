@@ -16,6 +16,7 @@
 <script>
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
 export default {
+    name: "Payment",
   components: {
     StripeCheckout,
   },
@@ -39,8 +40,5 @@ export default {
       this.$refs.checkoutRef.redirectToCheckout();
     },
   },
-  created(){
-      console.log("VUE_APP_STRIPE_PUBLISHABLE_KEY: "+process.env.VUE_APP_STRIPE_PUBLISHABLE_KEY)
-  }
 };
 </script>
