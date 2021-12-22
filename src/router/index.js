@@ -150,7 +150,7 @@ router.beforeEach((to,from,next)=>{
   NProgress.start()
   next()
 })
-router.afterEach(()=>{
+router.afterEach((to,from,next)=>{
 NProgress.done()
 next()
 })
