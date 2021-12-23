@@ -16,7 +16,7 @@
                                             <p class="text-sm text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, maxime.</p>
                                             <div class="card_social flex items-center justify-between mt-4">
                                                 <span class="dark:text-gray-200">$ {{item.price}}</span>
-                                                <i class="bi bi-cart-x text-gray-400 text-xl mr-3 cursor-pointer" @click="removeFromCart(item.id)"></i> 
+                                                
                                             </div>
                                         </div>
                                 </div> 

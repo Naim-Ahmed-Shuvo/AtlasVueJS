@@ -46,7 +46,7 @@ export default {
           const res = await fetch('https://jsonplaceholder.typicode.com/posts')
           const posts = await res.json()
           this.posts = posts
-          console.log(posts);
+        //   console.log(posts);
        }
     },
     created(){

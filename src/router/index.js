@@ -11,7 +11,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -33,7 +33,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -50,7 +50,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -66,7 +66,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -82,7 +82,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -114,7 +114,7 @@ const routes = [
      beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{
@@ -129,7 +129,7 @@ const routes = [
     beforeEnter: (to, from, next) => {
       let user = JSON.parse(store.getters.getSignedUser)
       // console.log(user.name)
-      console.log(" in home",user)
+      // console.log(" in home",user)
       if(user==null){
         next('/login')
       } else{

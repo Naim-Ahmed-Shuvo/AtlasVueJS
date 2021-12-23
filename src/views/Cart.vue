@@ -7,7 +7,7 @@
                                 <p class="dark:text-gray-200"><b>Subtotal: </b> ${{subTotal}}</p>
                             </div>
                             <div class="cards grid lg:grid-cols-2 xs:grid-cols-1 gap-10">
-                                 <div class="card flex xs:flex-col sm:flex-row  border dark:border-slate-600 p-5" v-for="(item,idx) in carts" :key="idx">
+                                 <div class="card flex xs:flex-col sm:flex-row  border dark:border-gray-600 p-5" v-for="(item,idx) in carts" :key="idx">
                                         <div class="card-img  xs:flex  xs:justify-center">
                                         <img :src="item.image" alt="img" height='140' width='200'/>
                                         </div>
@@ -21,7 +21,7 @@
                                         </div>
                                 </div> 
 
-                                <div class='text-center text-gray-800 dark:text-slate-100 border col-span-12 py-5 dark:border-slate-600 md:col-span-12 xs:col-span-1' v-if="carts.length==0">
+                                <div class='text-center text-gray-800 dark:text-gray-200 border col-span-12 py-5 dark:border-gray-600 md:col-span-12 xs:col-span-1' v-if="carts.length==0">
                                         <h4>No Cart Items...</h4>
                                         <router-link to="shop">
 

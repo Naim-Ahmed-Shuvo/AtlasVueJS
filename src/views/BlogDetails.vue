@@ -64,22 +64,22 @@ export default {
         async getPost(){
             const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
             const post = await res.json()
-            console.log(post)
+            // console.log(post)
             this.post = post
             this.getPostUser(post.userId)
         },
         async getPostUser(userId){
-            console.log("user id: ",userId)
+            // console.log("user id: ",userId)
             const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
             const user = await res.json()
-            console.log("user: ",user)
+            // console.log("user: ",user)
             this.user = user
            
         },
         async getPostComments(){
             const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}/comments`)
             const comments = await res.json()
-            console.log("comments: ",comments)
+            // console.log("comments: ",comments)
             this.comments = comments
         }
     },

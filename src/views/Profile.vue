@@ -56,7 +56,7 @@ export default {
     getUser() {
       console.log("computed");
       const user = JSON.parse(localStorage.getItem("USER"));
-      console.log(user);
+      // console.log(user);
       return user;
     },
   },
