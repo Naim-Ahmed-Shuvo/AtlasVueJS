@@ -11,7 +11,7 @@ export default createStore({
   mutations: {
      //for syncronous task
      signIn: (state,user) => {
-        console.log(user);
+        // console.log(user);
         state.user = user;
         router.push('/');
      },
